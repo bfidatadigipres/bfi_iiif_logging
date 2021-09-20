@@ -5,7 +5,7 @@ After=docker.service
 
 [Service]
 Type=simple
-RemainAfterExit=yes
+RemainAfterExit=no
 WorkingDirectory=/opt/bfi/iiif-logging
 ExecStartPre=/usr/local/bin/docker-compose --file /opt/bfi/iiif-logging/<environment>/docker-compose.yml --env-file /etc/opt/bfi/iiif-logging/<environment>/config.env pull --include-deps
 ExecStart=/usr/local/bin/docker-compose --file /opt/bfi/iiif-logging/<environment>/docker-compose.yml --env-file /etc/opt/bfi/iiif-logging/<environment>/config.env up --remove-orphans --abort-on-container-exit --no-color
